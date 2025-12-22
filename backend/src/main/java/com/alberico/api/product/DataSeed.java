@@ -20,8 +20,15 @@ public class DataSeed {
             p1.setDescription("Salsa, muzza, orégano.");
             p1.setPrice(new BigDecimal("450"));
             p1.setImageUrl("https://picsum.photos/seed/muzza/600/400");
-
             repo.save(p1);
+
+            Product p2 = new Product();
+            p2.setId("fugazzeta");
+            p2.setName("Pizza Fugazzeta");
+            p2.setDescription("Cebolla, jamon.");
+            p2.setPrice(new BigDecimal("400"));
+            p2.setImageUrl("https://picsum.photos/seed/muzza/600/400");
+            repo.save(p2);
         };
     }
 }
