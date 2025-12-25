@@ -1,0 +1,29 @@
+.toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+
+  height: 64px;
+  padding: 0 16px;
+
+  background-color: white;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.toolbarLeft {
+  display: flex;
+  align-items: center;
+}
+
+.toolbarCenter {
+  display: flex;
+  justify-content: center;
+}
+
+.toolbarRight {
+  width: 40px; /* reserva espacio simétrico */
+}
