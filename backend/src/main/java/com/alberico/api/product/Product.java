@@ -1,7 +1,10 @@
 package com.alberico.api.product;
 
+import com.alberico.api.tag.Tag;
 import jakarta.persistence.*;
 import java.math.BigDecimal;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "products")
@@ -19,6 +22,31 @@ public class Product {
     private BigDecimal price;
 
     private String imageUrl;
+
+    @ManyToMany
+    @JoinTable(
+            name = "product_tags",
+            joinColumns = @JoinColumn(name = "product_id"),
+            inverseJoinColumns = @JoinColumn(name = "tag_id")
+    )
+    private Set<Tag> tags = new HashSet<>();
+
+    protected Product() {}
+
+    public Product(String id, String name, BigDecimal price) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+    }
+
+    public void addTag(Tag tag) {
+        tags.add(tag);
+    }
+
+    public Set<Tag> getTags() {
+        return tags;
+    }
+
 
     public String getId() { return id; }
     public void setId(String id) { this.id = id; }

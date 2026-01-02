@@ -1,0 +1,33 @@
+.tag-selector {
+  display: flex;
+  gap: 12px;
+  padding: 12px 16px;
+  overflow-x: auto;
+  border-bottom: 1px solid #eee;
+}
+
+.tagchip {
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  background-color: white;
+  cursor: pointer;
+  font-size: 14px;
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.2s ease;
+}
+
+.tag-chip:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.tag-chip.active {
+  background-color: #222;
+  color: white;
+  border-color: #222;
+}
