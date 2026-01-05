@@ -1,10 +1,9 @@
-// components/ProductGrid/ProductGrid.jsx
 import ProductCard from "../ProductCard/ProductCard";
 import styles from "./ProductGrid.module.css";
 
 function ProductGrid({ products }) {
   if (products.length === 0) {
-    return <p>No hay productos</p>;
+    return <p>Lo sentimos, no econtramos productos.</p>;
   }
 
   return (

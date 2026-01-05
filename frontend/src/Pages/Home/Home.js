@@ -12,7 +12,7 @@ function Home() {
   const [loading, setLoading] = useState(false);
   const { tags, loading: tagsLoading } = useTags();
   const [selectedTags, setSelectedTags] = useState([]);
-  const debouncedSearch = useDebounce(searchTerm, 500);
+  const debouncedSearch = useDebounce(searchTerm, 1000);
 
     
   useEffect(() => {
@@ -31,7 +31,6 @@ function Home() {
         searchTerm={searchTerm}
         onSearchChange={(e) => setSearchTerm(e.target.value)}
       />
-
 
       <TagSelector
         availableTags={tags}

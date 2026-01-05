@@ -21,10 +21,18 @@ public class DataSeed {
             Tag t1 = new Tag("VEG", "Vegetariana");
             Tag t2 = new Tag("PROMO", "Promocion");
             Tag t3 = new Tag("PICANTE", "Picante");
+            Tag t4 = new Tag("NUEVO", "Nuevo");
+            Tag t5 = new Tag("HOLA", "Hola");
+            Tag t6 = new Tag("CHAU", "Chau");
+            Tag t7 = new Tag("MEMEMEM", "123");
 
             tagRepository.save(t1);
             tagRepository.save(t2);
             tagRepository.save(t3);
+            tagRepository.save(t4);
+            tagRepository.save(t5);
+            tagRepository.save(t6);
+            tagRepository.save(t7);
 
             if (productRepository.count() > 0) return;
 
