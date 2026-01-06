@@ -1,15 +1,16 @@
 .tagSelector {
   display: "flex"; 
-  gap: 24px;
   padding: 10px;
   overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
   scrollbar-width: none;
+  overscroll-behavior: none contain;
 
 }
 
 .tagChip {
+  margin: 5px;
   display: inline-block;
   padding: 6px 14px;
   border-radius: 20px;

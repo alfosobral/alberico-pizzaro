@@ -6,7 +6,7 @@ import TagSelector from "../../Components/TagSelector/TagSelector.js";
 import { useDebounce } from "../../Hooks/useDebounce";
 import { useTags } from "../../Hooks/useTags";
 
-function Home() {
+export default function Home() {
   const [searchTerm, setSearchTerm] = useState("");
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -38,10 +38,10 @@ function Home() {
         onChange={setSelectedTags}
       />
 
-      <ProductGrid products={products} />
+      <ProductGrid 
+        products={products} 
+      />
+      
     </>
   );
 }
-
-export default Home;
-

@@ -1,3 +1,5 @@
+import { Navigate } from "react-router-dom";
+
 const API = process.env.REACT_APP_API_URL;
 
 export async function searchProducts({
@@ -32,3 +34,17 @@ export async function searchProducts({
 
   return res.json();
 }
+
+
+export const searchProductById = async (id) => {
+    try {
+        const response = await fetch(`${API}/api/products/${id}`);
+        if (!response.ok) {
+            throw new Error('No se pudo encontrar el producto');
+        }
+        return await response.json();
+    } catch (error) {
+        console.error("Error en productService:", error);
+        throw error;
+    }
+};

@@ -3,7 +3,7 @@ import styles from "./Toolbar.module.css";
 import Searchbar from "../Searchbar/Searchbar";
 import Hamburger from "../Hamburger/Hamburger";
 
-export default function Toolbar({ searchTerm, onSearchChange }) {
+export default function Toolbar({ searchTerm, onSearchChange, searchBarOff = false }) {
   return (
     <header className={styles.toolbar}>
       <div className={styles.toolbarLeft}>
@@ -11,10 +11,12 @@ export default function Toolbar({ searchTerm, onSearchChange }) {
       </div>
 
       <div className={styles.toolbarCenter}>
-        <Searchbar 
-        value = {searchTerm}
-        onChange = {onSearchChange}
-        />
+        {!searchBarOff &&
+          <Searchbar 
+          value = {searchTerm}
+          onChange = {onSearchChange}
+          />
+        } 
       </div>
 
       <div className={styles.toolbarRight} />
